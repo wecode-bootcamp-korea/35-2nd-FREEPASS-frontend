@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "img": "https://images.unsplash.com/photo-1570191913384-7b4ff11716e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c2VvdWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "서울",
+    "city_name_en": "SEL"
+  },
+  {
+    "id": 2,
+    "img": "https://images.unsplash.com/photo-1581398644564-c46e97d9418a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGplanV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "제주",
+    "city_name_en": "CJU"
+    
+  },
+  {
+    "id": 3,
+    "img": "https://images.unsplash.com/photo-1524592714635-d77511a4834d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWlycG9ydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "김포",
+    "city_name_en": "GMP"
+  },
+  {
+    "id": 4,
+    "img": "https://images.unsplash.com/photo-1626092706366-28ba77f382c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YnVzYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "부산",
+    "city_name_en": "PUS"
+  },
+  {
+    "id": 5,
+    "img": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "청주",
+    "city_name_en": "CJJ"
+  },
+  {
+    "id": 6,
+    "img": "https://images.unsplash.com/photo-1587000407126-4523c067bc6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFpbGJpa2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "광주",
+    "city_name_en": "KWJ"
+  },
+  {
+    "id": 7,
+    "img": "https://images.unsplash.com/photo-1626275336544-417f7db75bf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c21hbGwlMjBjaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "대구",
+    "city_name_en": "TAE"
+  },
+  {
+    "id": 8,
+    "img": "https://images.unsplash.com/photo-1559831549-6e9ea4ea4038?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHR1cnRsZSUyMHNoaXB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "여수",
+    "city_name_en": "RSU"
+  },
+  {
+    "id": 9,
+    "img": "https://images.unsplash.com/photo-1614967268403-799d65094169?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHN0ZWVsJTIwdG93bnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "city_name_ko": "울산",
+    "city_name_en": "USN"
+  }
+]

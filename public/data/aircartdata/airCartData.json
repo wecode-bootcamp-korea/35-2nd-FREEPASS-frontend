@@ -1,0 +1,72 @@
+{
+  "originResults": {
+    "code": "01023451212",
+    "airline": "대한항공",
+    "en_airline": "BOEING 789-9",
+    "kor_origin": "인천",
+    "kor_destination": "김포",
+    "origin": "인천 CJU",
+    "destination": "김포 GMP",
+    "flight_number": "YP0631",
+    "depDate": "2022.08.13(토)",
+    "arrDate": "2022.10.08(토)",
+    "depTime": "06:25",
+    "arrTime": "07:45",
+    "flight_time": "1시간 05분",
+    "user_information": {
+      "user_name": "홍길동",
+      "user_email": "ghdrlfehd@naver.com"
+    },
+    "person": 3,
+    "total_price": 118000,
+    "passengers": [
+      {
+        "name": "hogif Jeong",
+        "gender": "남성",
+        "birth": "2000-09-19",
+        "price": 59000
+      },
+      {
+        "name": "wiafw choi",
+        "gender": "남성",
+        "birth": "2002-10-10",
+        "price": 59000
+      }
+    ]
+  },
+  "destinationResults": {
+    "code": "01034242344",
+    "airline": "제주항공",
+    "en_airline": "BOEING 734-9",
+    "kor_origin": "인천",
+    "kor_destination": "김포",
+    "origin": "김포 GMP",
+    "destination": "인천 CJU",
+    "flight_number": "YP0503",
+    "depDate": "2022.08.14(토)",
+    "arrDate": "2022.10.08(토)",
+    "depTime": "06:30",
+    "arrTime": "07:40",
+    "flight_time": "1시간 10분",
+    "user_information": {
+      "user_name": "홍길동",
+      "user_email": "ghdrlfehd@naver.com"
+    },
+    "total_price": 208000,
+    "person": 3,
+    "passengers": [
+      {
+        "name": "efefefe Jeong",
+        "gender": "남성",
+        "birth": "2000-09-19",
+        "price": 59000
+      },
+      {
+        "name": "ewfwefwe choi",
+        "gender": "남성",
+        "birth": "2002-10-10",
+        "price": 59000
+      }
+    ]
+  }
+}

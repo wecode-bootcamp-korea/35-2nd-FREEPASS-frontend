@@ -3,8 +3,12 @@ import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+
   * {
     box-sizing: border-box;
+    margin: 0%;
+  padding: 0%;
+  font-family: 'Barlow', 'Noto Sans KR', sans-serif;
   }
   a {
     color: #000;

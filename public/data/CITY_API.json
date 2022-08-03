@@ -1,0 +1,69 @@
+{
+  "result": [
+      {
+          "id": 1,
+          "city_name": "김포",
+          "code": "GMP"
+      },
+      {
+          "id": 2,
+          "city_name": "제주",
+          "code": "CJU"
+      },
+      {
+          "id": 3,
+          "city_name": "부산",
+          "code": "PUS"
+      },
+      {
+          "id": 4,
+          "city_name": "양양",
+          "code": "YNY"
+      },
+      {
+          "id": 5,
+          "city_name": "이제프스크",
+          "code": "LJK"
+      },
+      {
+          "id": 6,
+          "city_name": "보이제",
+          "code": "BOI"
+      },
+      {
+          "id": 7,
+          "city_name": "제네바",
+          "code": "GVA"
+      },
+      {
+          "id": 8,
+          "city_name": "콘제도",
+          "code": "RNI"
+      },
+      {
+          "id": 9,
+          "city_name": "제네럴산토스",
+          "code": "GES"
+      },
+      {
+          "id": 10,
+          "city_name": "제양",
+          "code": "SWA"
+      },
+      {
+          "id": 11,
+          "city_name": "알제",
+          "code": "ALG"
+      },
+      {
+          "id": 12,
+          "city_name": "제르바",
+          "code": "DJE"
+      },
+      {
+          "id": 13,
+          "city_name": "제슈프",
+          "code": "RZE"
+      }
+  ]
+}
