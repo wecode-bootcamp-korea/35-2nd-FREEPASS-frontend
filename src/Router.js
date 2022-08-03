@@ -9,6 +9,9 @@ import AirMap from './pages/AirMap';
 import Login from './pages/Login';
 import Main from './pages/Main';
 import Esg from './pages/Esg/Esg';
+import AirModal from './pages/airModal/AirModal';
+import Loading from './components/Loading';
+import ModalFilterBar from '../src/components/ModalFilterBar';
 
 const Router = () => {
   return (
@@ -22,6 +25,9 @@ const Router = () => {
         <Route path="/airlist" element={<AirList />} />
         <Route path="/airmap" element={<AirMap />} />
         <Route path="/esg" element={<Esg />} />
+        <Route path="/airmodal" element={<AirModal />} />
+        <Route path="/loading" element={<Loading />} />
+        <Route path="/filter" element={<ModalFilterBar />} />
       </Routes>
       <Footer />
     </BrowserRouter>

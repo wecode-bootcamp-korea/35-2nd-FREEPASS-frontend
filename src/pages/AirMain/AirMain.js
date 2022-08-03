@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import AirBnnerCard from './AirBannerCard';
 import AirTripCard from './AirTripCard';
 import AirPromotionCarousel from '../../components/carousel/AirPromotionCarousel';
 import FreePromotionCarousel from '../../components/carousel/FreePromotionCarosuel';
+import ModalFilterBar from '../../components/ModalFilterBar';
 
 const AirMain = () => {
   const [jejuData, setJejuData] = useState([]);
@@ -38,7 +38,7 @@ const AirMain = () => {
 
   return (
     <AirMainContainer>
-      <AirBnnerCard />
+      <ModalFilterBar />
       <BodyWrap>
         <PromotionTit>
           <AirPromotionCarousel title="✈️ 항공사 프로모션 🛩" />
@@ -63,16 +63,20 @@ const AirMainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: -1;
 `;
 
 const MainBox = styled.div`
   display: block;
+  z-index: -1;
 `;
 
 const BodyWrap = styled.div`
   display: block;
+  z-index: -1;
 `;
 
 const PromotionTit = styled.div`
   display: block;
+  z-index: -1;
 `;
