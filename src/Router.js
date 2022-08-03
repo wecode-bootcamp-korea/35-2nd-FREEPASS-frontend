@@ -5,8 +5,9 @@ import Nav from './components/Nav';
 import AirCart from './pages/AirCart';
 import AirList from './pages/AirList';
 import AirMain from './pages/AirMain/AirMain';
-import AirMap from './pages/AirMap/AirMap';
-import Login from './pages/Login';
+import AirMap from './pages/AirMap';
+import Login from './pages/Login/Login';
+import Redirect from './pages/Redirect';
 import Main from './pages/Main';
 import Esg from './pages/Esg/Esg';
 
@@ -16,6 +17,7 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/users/kakao" element={<Redirect />} />
         <Route path="/" element={<Main />} />
         <Route path="/airmain" element={<AirMain />} />
         <Route path="/aircart" element={<AirCart />} />
