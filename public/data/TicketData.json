@@ -1,0 +1,45 @@
+{
+  "one_way_result": [
+    {
+      "flight_id": 11,
+      "airline_id": 3,
+      "airline_name": "연근마켓항공",
+      "airline_logo": "https://user-images.githubusercontent.com/102202607/183796654-d4488745-5194-4a09-8703-2cf25af22ceb.jpg",
+      "airplane_id": 11,
+      "airplane_name": "EUN_001",
+      "airplane_code": "F001",
+      "departure_time": "11:10:00",
+      "arrival_time": "12:20:00",
+      "departure_location_name": "김포",
+      "arrival_location_name": "제주",
+      "departure_location_code": "GMP",
+      "arrival_location_code": "CJU",
+      "remaining_seat": 10,
+      "price": "70000.000",
+      "total_price": 308000.0,
+      "passenger_count": 6
+    }
+  ],
+
+  "round_trip_result": [
+    {
+      "flight_id": 21,
+      "airline_id": 5,
+      "airline_name": "깨깨오항공",
+      "airline_logo": "https://user-images.githubusercontent.com/102202607/183796661-45899450-bc17-4348-8205-02b8bc5a159e.jpg",
+      "airplane_id": 9,
+      "airplane_name": "JOO_001",
+      "airplane_code": "E001",
+      "departure_time": "19:30:00",
+      "arrival_time": "20:50:00",
+      "departure_location_name": "제주",
+      "arrival_location_name": "김포",
+      "departure_location_code": "CJU",
+      "arrival_location_code": "GMP",
+      "remaining_seat": 11,
+      "price": "60000.000",
+      "total_price": 264000.0,
+      "passenger_count": 6
+    }
+  ]
+}

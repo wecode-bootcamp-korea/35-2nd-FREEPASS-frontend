@@ -1,4 +1,7 @@
 const theme = {
+  width: '100%',
+  height: '100%',
+  backgroundColor: '#f1f1f1',
   black: '#000000',
   white: '#FFFFFF',
   lightGrey: '#B0B0B0',

@@ -1,81 +1,99 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import Modal from 'react-modal';
-import AirModal from '../pages/airModal/AirModal';
-Modal.setAppElement('#root');
 
-const ModalFilterBar = () => {
-  const customStyles = {
-    overlay: {
-      backgroundColor: 'rgba(47,138,241,0.2)',
-    },
-    content: {
-      top: 0,
-      width: '100%',
-      padding: 0,
-      border: '1px solid #eaeaea',
-      position: 'static',
-    },
-  };
+const ModalFilterBar = ({ modalData }) => {
+  const {
+    departure_location,
+    arrival_location,
+    departure_date,
+    adult,
+    child,
+    infant,
+    seat_class,
+  } = modalData;
 
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const adultCount = `성인${adult},`;
+  const childCount = `${child !== 0 ? `소아${child},` : ''}`;
+  const babyCount = `${infant !== 0 ? `유아${infant},` : ''}`;
 
-  function openModal() {
-    setIsOpen(true);
+  if (departure_date?.length > 0) {
+    return (
+      <div>
+        <BarButton>
+          <InnerBar>
+            <FlightInner primary>
+              <Panel width="180px">
+                <Text>출발</Text>
+                <Button>
+                  <Text>
+                    {departure_location}
+                    <span>{CITYNAME_EN_DATA[departure_location]}</span>
+                  </Text>
+                </Button>
+              </Panel>
+              <Panel width="180px">
+                <Text>도착</Text>
+                <Button>
+                  <Text>
+                    {arrival_location}
+                    <span>{CITYNAME_EN_DATA[arrival_location]}</span>
+                  </Text>
+                </Button>
+              </Panel>
+            </FlightInner>
+            <FlightInner>
+              <Panel width="215px">
+                <Text>탑승일</Text>
+                <Button>
+                  {departure_date.length === 1
+                    ? departure_date
+                    : `${departure_date[0].slice(2)}~${departure_date[1].slice(
+                        2
+                      )}`}
+                </Button>
+              </Panel>
+            </FlightInner>
+            <FlightInner>
+              <Panel width="190px">
+                <Text>인원 및 좌석등급</Text>
+                <Button>
+                  <Text>
+                    {adultCount}
+                    {childCount}
+                    {babyCount}
+                    {seat_class === 'business' ? '비즈니스석' : '전체'}
+                  </Text>
+                </Button>
+              </Panel>
+            </FlightInner>
+            <Search>검색</Search>
+          </InnerBar>
+        </BarButton>
+      </div>
+    );
   }
+};
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-  return (
-    <div>
-      <BarButton onClick={openModal}>
-        <InnerBar>
-          <FlightInner primary>
-            <Panel width="180px">
-              <Text>출발</Text>
-              <Button>
-                <Text>
-                  서울<span>SEL</span>
-                </Text>
-              </Button>
-            </Panel>
-            <Panel width="180px">
-              <Text>도착</Text>
-              <Button>
-                <Text>어디로 떠나시나요?</Text>
-              </Button>
-            </Panel>
-          </FlightInner>
-          <FlightInner>
-            <Panel width="215px">
-              <Text>탑승일</Text>
-              <Button>
-                <GrayText>탑승일을 선택하세요.</GrayText>
-              </Button>
-            </Panel>
-          </FlightInner>
-          <FlightInner>
-            <Panel width="190px">
-              <Text>인원 및 좌석등급</Text>
-              <Button>
-                <Text>성인1,전체</Text>
-              </Button>
-            </Panel>
-          </FlightInner>
-          <Search>검색</Search>
-        </InnerBar>
-      </BarButton>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <AirModal closeModal={closeModal} />
-      </Modal>
-    </div>
-  );
+const CITYNAME_EN_DATA = {
+  서울: 'SEL',
+  제주: 'CJU',
+  김포: 'GMP',
+  부산: 'PUS',
+  청주: 'CJJ',
+  광주: 'KWJ',
+  대구: 'TAE',
+  여수: 'RSU',
+  울산: 'USN',
+  양양: 'YNY',
+  이제프스크: 'LJK',
+  보이제: 'BOI',
+  제네바: 'GVA',
+  콘제도: 'RNI',
+  제네럴산토스: 'GES',
+  제양: 'SWA',
+  알제: 'ALG',
+  제르바: 'DJE',
+  제슈프: 'RZE',
 };
 
 const BarButton = styled.button`
@@ -83,19 +101,17 @@ const BarButton = styled.button`
   justify-content: center;
   width: 100%;
   padding-top: 50px;
+  padding-bottom: 40px;
   border: 0;
-  background-color: #fff;
-  padding-bottom: 100px;
+  background-color: #f8f8f8;
 `;
-
 const InnerBar = styled.div`
   display: flex;
   justify-content: center;
   padding-bottom: 25px;
   text-align: left;
-  background-color: #fff;
+  background-color: #f8f8f8;
 `;
-
 const FlightInner = styled.span`
   height: 83px;
   display: flex;
@@ -105,21 +121,18 @@ const FlightInner = styled.span`
   border-radius: 12px;
   box-shadow: 0 8px 16px 0 rgb(32 32 32 / 8%);
   background: #fff;
-
   ${props =>
     props.primary &&
     css`
       border: 1px solid #63a1ff;
     `}
 `;
-
 const Panel = styled.span`
   width: ${props => props.width};
   padding: 10px 7px 3px 5px;
   text-align: left;
   font-size: 10px;
 `;
-
 const Text = styled.span`
   margin: ${props => props.margin};
   line-height: 1.2rem;
@@ -130,7 +143,6 @@ const Text = styled.span`
     color: #63a1ff;
   }
 `;
-
 const Button = styled.div`
   height: 20px;
   display: block;
@@ -147,12 +159,10 @@ const Button = styled.div`
     font-weight: 700;
   }
 `;
-
 const GrayText = styled.span`
   color: #aeaeae;
   font-weight: 400;
 `;
-
 const Search = styled.span`
   width: 80px;
   height: 80px;
@@ -167,5 +177,4 @@ const Search = styled.span`
   text-align: center;
   background: #569aff;
 `;
-
 export default ModalFilterBar;

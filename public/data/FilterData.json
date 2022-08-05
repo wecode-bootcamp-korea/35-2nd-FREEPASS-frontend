@@ -1,0 +1,11 @@
+{
+  "location_result": {
+    "departure_location": "김포",
+    "arrival_location": "제주",
+    "departure_date": ["2022-08-13"],
+    "adult": 1,
+    "infant": 2,
+    "child": 3,
+    "seat_class": "business"
+  }
+}

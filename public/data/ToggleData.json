@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "title": "정렬",
+    "list": [
+      {
+        "id": 1,
+        "filter": "출발시간 빠른 순"
+      },
+      {
+        "id": 2,
+        "filter": "출발시간 늦은 순"
+      },
+      {
+        "id": 3,
+        "filter": "가격 낮은 순"
+      },
+      {
+        "id": 4,
+        "filter": "가격 높은 순"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "항공사",
+    "list": [
+      {
+        "id": 5,
+        "link": "https://user-images.githubusercontent.com/102202607/183797714-6c329027-579d-48f1-a4fe-a14cae98449a.png",
+
+        "filter": "샘숭 항공"
+      },
+      {
+        "id": 6,
+        "link": "https://user-images.githubusercontent.com/102202607/183796667-9148d9a2-9de5-4530-ab23-99b233f99a90.jpg",
+        "filter": "나이버 항공"
+      },
+      {
+        "id": 7,
+        "link": "https://user-images.githubusercontent.com/102202607/183796650-d5180fa7-bedd-481e-95c8-942e8c69c71e.jpg",
+        "filter": "코팡 항공"
+      },
+      {
+        "id": 8,
+        "link": "https://user-images.githubusercontent.com/102202607/183796659-a5513207-132c-4f45-b0ae-159aa0a54128.jpg",
+        "filter": "토스트 항공"
+      },
+      {
+        "id": 9,
+        "link": "https://user-images.githubusercontent.com/102202607/183796654-d4488745-5194-4a09-8703-2cf25af22ceb.jpg",
+        "filter": "연근마켓 항공"
+      },
+      {
+        "id": 10,
+        "link": "https://user-images.githubusercontent.com/102202607/183796661-45899450-bc17-4348-8205-02b8bc5a159e.jpg",
+        "filter": "깨깨오 항공"
+      }
+    ]
+  }
+]
