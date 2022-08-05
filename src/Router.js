@@ -24,7 +24,7 @@ const Router = () => {
         <Route path="/" element={<Main />} />
         <Route path="/airmain" element={<AirMain />} />
         <Route path="/aircart" element={<AirCart />} />
-        <Route path="/airlist" element={<AirList />} />
+        <Route path="/airList" element={<AirList />} />
         <Route path="/airmap" element={<AirMap />} />
         <Route path="/esg" element={<Esg />} />
         <Route path="/airmodal" element={<AirModal />} />
