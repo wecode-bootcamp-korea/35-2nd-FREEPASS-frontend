@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "img": "https://images.unsplash.com/photo-1596941248238-0d49dcaa4263?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "dep": "인천",
+    "arr": "제주",
+    "trip": "왕복",
+    "date": "9월 2일 ~ 9월 4일",
+    "price": "28,300원 ~",
+    "discount": "9월 출발"
+  },
+  {
+    "id": 2,
+    "img": "https://images.unsplash.com/photo-1581398644564-c46e97d9418a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "dep": "김포",
+    "arr": "제주",
+    "trip": "왕복",
+    "date": "10월 21일 ~ 10월 24일",
+    "price": "42,500원 ~",
+    "discount": "10월 출발"
+  },
+  {
+    "id": 3,
+    "img": "https://images.unsplash.com/photo-1588043213440-fd9c881853e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80",
+    "dep": "인천",
+    "arr": "제주",
+    "trip": "왕복",
+    "date": "11월 2일 ~ 11월 8일",
+    "price": "50,300원 ~",
+    "discount": "11월 출발"
+  },
+  {
+    "id": 4,
+    "img": "https://images.unsplash.com/photo-1562680802-9cf8b15f419d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "dep": "인천",
+    "arr": "제주",
+    "trip": "왕복",
+    "date": "12월 25일 ~ 12월 28일",
+    "price": "90,300원 ~",
+    "discount": "12월 출발"
+  }
+]

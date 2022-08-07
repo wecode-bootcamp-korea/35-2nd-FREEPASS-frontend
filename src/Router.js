@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Nav from './components/Nav';
 import AirCart from './pages/AirCart';
 import AirList from './pages/AirList';
-import AirMain from './pages/AirMain';
+import AirMain from './pages/AirMain/AirMain';
 import AirMap from './pages/AirMap';
 import Login from './pages/Login';
 import Main from './pages/Main';
