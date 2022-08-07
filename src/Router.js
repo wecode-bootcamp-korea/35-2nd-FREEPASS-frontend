@@ -8,6 +8,7 @@ import AirMain from './pages/AirMain';
 import AirMap from './pages/AirMap';
 import Login from './pages/Login';
 import Main from './pages/Main';
+import Esg from './pages/Esg/Esg';
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/aircart" element={<AirCart />} />
         <Route path="/airlist" element={<AirList />} />
         <Route path="/airmap" element={<AirMap />} />
+        <Route path="/esg" element={<Esg />} />
       </Routes>
       <Footer />
     </BrowserRouter>
