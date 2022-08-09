@@ -1,0 +1,44 @@
+{
+  "message": [
+    {
+      "id": 1,
+      "name": "김포국제공항",
+      "price": "96000.00",
+      "region": "서울특별시",
+      "is_verified": true,
+      "latitude": "37.3325",
+      "longtitude": "126.4751",
+      "image_url": "https://images.unsplash.com/photo-1647483685653-6bb1537d69ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+    },
+    {
+      "id": 2,
+      "name": "제주국제공항",
+      "price": "65000.00",
+      "region": "제주시",
+      "is_verified": false,
+      "latitude": "33.3044",
+      "longtitude": "126.2934",
+      "image_url": "https://images.unsplash.com/photo-1588611395188-fe6bc975ed50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
+    },
+    {
+      "id": 3,
+      "name": "김해국제공항",
+      "price": "160000.00",
+      "region": "부산광역시",
+      "is_verified": true,
+      "latitude": "35.17322",
+      "longtitude": "128.9464591",
+      "image_url": "https://images.unsplash.com/photo-1596516106788-98cd0f88bb1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+    },
+    {
+      "id": 4,
+      "name": "양양국제공항",
+      "price": "90000.00",
+      "region": "강원도",
+      "is_verified": false,
+      "latitude": "38.0341",
+      "longtitude": "128.4009",
+      "image_url": "https://images.unsplash.com/photo-1558204692-5f402fe220b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    }
+  ]
+}
