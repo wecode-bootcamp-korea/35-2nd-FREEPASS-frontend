@@ -5,7 +5,7 @@ import Nav from './components/Nav';
 import AirCart from './pages/AirCart';
 import AirList from './pages/AirList';
 import AirMain from './pages/AirMain/AirMain';
-import AirMap from './pages/AirMap';
+import AirMap from './pages/AirMap/AirMap';
 import Login from './pages/Login';
 import Main from './pages/Main';
 import Esg from './pages/Esg/Esg';
