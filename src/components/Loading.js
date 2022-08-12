@@ -57,13 +57,15 @@ const DivSection = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   object-fit: cover;
   position: fixed;
   top: 0;
   left: 0;
   color: #ffffff;
   text-align: center;
+  z-index: 99;
+  overflow: hidden;
 `;
 
 const Div = styled.div`

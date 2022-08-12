@@ -6,11 +6,19 @@ import RightCont from './RightCont';
 const AirMap = () => {
   const [mapInfo, setMapInfo] = useState([]);
 
+  // useEffect(() => {
+  //   fetch('/data/mapdata/mapData.json')
+  //     .then(res => res.json())
+  //     .then(data => setMapInfo(data.message));
+  // }, []);
+
   useEffect(() => {
-    fetch('/data/mapdata/mapData.json')
+    fetch('http://43.200.163.205:8000/flights/locations')
       .then(res => res.json())
-      .then(data => setMapInfo(data.message));
+      .then(data => setMapInfo(data.result));
   }, []);
+
+  // console.log(mapInfo);
 
   const isData = mapInfo.length !== 0;
 

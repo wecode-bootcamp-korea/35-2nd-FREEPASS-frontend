@@ -1,23 +1,23 @@
 {
   "originResults": {
     "code": "01023451212",
-    "airline": "대한항공",
-    "en_airline": "BOEING 789-9",
+    "airline_name": "대한항공",
+    "airplane_name": "BOEING 789-9",
     "kor_origin": "인천",
-    "kor_destination": "김포",
+    "arrival_location_name": "김포",
     "origin": "인천 CJU",
     "destination": "김포 GMP",
-    "flight_number": "YP0631",
+    "airplane_code": "YP0631",
     "depDate": "2022.08.13(토)",
     "arrDate": "2022.10.08(토)",
-    "depTime": "06:25",
-    "arrTime": "07:45",
+    "departure_time": "06:25",
+    "arrival_time": "07:45",
     "flight_time": "1시간 05분",
     "user_information": {
       "user_name": "홍길동",
       "user_email": "ghdrlfehd@naver.com"
     },
-    "person": 3,
+    "passenger_count": 3,
     "total_price": 118000,
     "passengers": [
       {

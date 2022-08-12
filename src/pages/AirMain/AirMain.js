@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import AirTripCard from './AirTripCard';
 import AirPromotionCarousel from '../../components/carousel/AirPromotionCarousel';
 import FreePromotionCarousel from '../../components/carousel/FreePromotionCarosuel';
-import ModalFilterBar from '../../components/ModalFilterBar';
+import ModalComponent from '../../components/ModalComponent';
 
 const AirMain = () => {
   const [jejuData, setJejuData] = useState([]);
@@ -37,23 +37,25 @@ const AirMain = () => {
   }, []);
 
   return (
-    <AirMainContainer>
-      <ModalFilterBar />
-      <BodyWrap>
-        <PromotionTit>
-          <AirPromotionCarousel title="✈️ 항공사 프로모션 🛩" />
-          <FreePromotionCarousel title="🚌 프리패스 프로모션 🚗" />
-        </PromotionTit>
-        <MainBox>
-          <AirTripCard
-            title="🍊 제주 여행은 언제나 즐거워 🌴"
-            data={jejuData}
-          />
-          <AirTripCard title="🎏 간만에 일본에 가볼까? 🏯" data={japanData} />
-          <AirTripCard title="✈️ 인기 노선별 최저가 🚗" data={popularData} />
-        </MainBox>
-      </BodyWrap>
-    </AirMainContainer>
+    <>
+      <ModalComponent />
+      <AirMainContainer>
+        <BodyWrap>
+          <PromotionTit>
+            <AirPromotionCarousel title="✈️ 항공사 프로모션 🛩" />
+            <FreePromotionCarousel title="🚌 프리패스 프로모션 🚗" />
+          </PromotionTit>
+          <MainBox>
+            <AirTripCard
+              title="🍊 제주 여행은 언제나 즐거워 🌴"
+              data={jejuData}
+            />
+            <AirTripCard title="🎏 간만에 일본에 가볼까? 🏯" data={japanData} />
+            <AirTripCard title="✈️ 인기 노선별 최저가 🚗" data={popularData} />
+          </MainBox>
+        </BodyWrap>
+      </AirMainContainer>
+    </>
   );
 };
 
@@ -63,20 +65,16 @@ const AirMainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: -1;
 `;
 
 const MainBox = styled.div`
   display: block;
-  z-index: -1;
 `;
 
 const BodyWrap = styled.div`
   display: block;
-  z-index: -1;
 `;
 
 const PromotionTit = styled.div`
   display: block;
-  z-index: -1;
 `;

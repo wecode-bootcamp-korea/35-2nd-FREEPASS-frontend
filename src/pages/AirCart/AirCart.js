@@ -4,8 +4,12 @@ import styled from 'styled-components';
 import AirCartTicket from './AirCartTicket';
 import { AIR_TIKET_RES_USER_DATA } from './AirCartData';
 import { RetweetOutlined } from '@ant-design/icons';
+import { useLocation } from 'react-router';
+import Modal from 'react-modal';
+Modal.setAppElement('#root');
 
 const AirCart = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [userData, setUserData] = useState([]);
   const [bookData, setBookData] = useState({
     booker_name: '',
@@ -15,14 +19,41 @@ const AirCart = () => {
   const [passengerData, setPassengerData] = useState([]);
 
   const navigate = useNavigate();
+  // const navigateState = useNavigate().state;
+  // console.log('navigateState:', navigateState);
+  const { state } = useLocation();
+  console.log('navigateState:', state.result);
 
   useEffect(() => {
-    fetch('/data/aircartdata/airCartData.json')
-      .then(res => res.json())
-      .then(data => {
-        setUserData(data);
-      });
+    // fetch('/data/aircartdata/airCartData.json')
+    //   .then(res => res.json())
+    //   .then(data => {
+    setUserData(state.result);
+    // });
   }, []);
+
+  const {
+    airline_logo,
+    airline_name,
+    airplane_code,
+    airplane_name,
+    arrival_location_name,
+    arrival_time,
+    departure_location_name,
+    departure_time,
+    passenger_count,
+    price,
+    total_price,
+    departure_location_code,
+    arrival_location_code,
+  } = userData;
+
+  const scrollUp = () => {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   const { booker_name, booker_phone_number, booker_email } = bookData;
 
@@ -55,6 +86,7 @@ const AirCart = () => {
     );
 
     navigate('/');
+    scrollUp();
 
     // fetch(`data/data/data`, {
     //   method: 'POST',
@@ -94,13 +126,13 @@ const AirCart = () => {
           <FlightInner>
             <TicketBox>
               <TitAirSelect>
-                <DepTitle>{originResults.kor_origin}</DepTitle>
+                <DepTitle>{}</DepTitle>
                 <RetweetOutlined />
-                <ArrTitle>{destinationResults.kor_destination} 항공편</ArrTitle>
+                <ArrTitle>{} 항공편</ArrTitle>
               </TitAirSelect>
               <FlightListUl>
-                <AirCartTicket tiketData={originResults} />
-                <AirCartTicket tiketData={destinationResults} />
+                <AirCartTicket tiketData={state.result} />
+                {/* <AirCartTicket tiketData={destinationResults} /> */}
               </FlightListUl>
             </TicketBox>
             <TiketBoxRes>
@@ -134,7 +166,7 @@ const AirCart = () => {
               <TabContent>
                 <TabUl>
                   <TabLi>
-                    {[...Array(originResults.person)].map((n, idx) => {
+                    {[...Array(state.result.passenger_count)].map((n, idx) => {
                       const handlePassengerData = e => {
                         const { name, value } = e.target;
                         setPassengerData({
@@ -230,22 +262,19 @@ const AirCart = () => {
               <PaymentSide>
                 <PaymentSideDep>가는편 요금</PaymentSideDep>
                 <PaymentSideDepAmount>
-                  {originResults.total_price.toLocaleString('ko-KR')}원
+                  {total_price.toLocaleString('ko-KR')}원
                 </PaymentSideDepAmount>
               </PaymentSide>
               <PaymentSide>
                 <PaymentSideArr>오는편 요금</PaymentSideArr>
                 <PaymentSideArrAmount>
-                  {destinationResults.total_price.toLocaleString('ko-KR')}원
+                  {total_price ? '0' : total_price}원
                 </PaymentSideArrAmount>
               </PaymentSide>
               <PaymentSide>
                 <PaymentSideSumTit>결제금액</PaymentSideSumTit>
                 <PaymentSideAmount>
-                  {(
-                    originResults.total_price + destinationResults.total_price
-                  ).toLocaleString('ko-KR')}
-                  원
+                  {total_price.toLocaleString('ko-KR')}원
                 </PaymentSideAmount>
               </PaymentSide>
               <PaymentGuide>
@@ -267,6 +296,27 @@ const AirCart = () => {
           </PaymentBox>
         </SelectFlightWrap>
       </Contents>
+      {/* 모달영역 */}
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={postUserData}
+        contentLabel="My dialog"
+      >
+        <div>항공권 예매가 완료되었습니다.</div>
+        <>---------</>
+        <div>예약자 정보</div>
+        <div>성함 : {booker_name}</div>
+        <div>핸드폰 번호 : {booker_phone_number}</div>
+        <div>이메일 : {booker_email}</div>
+        <div>탑승객 정보</div>
+        <>---------</>
+        {/* <div>예약자 : {passengerData[0].first_name}</div> */}
+        {/* <div>생년월일 : {passengerData[0].first_birthday}</div> */}
+        {/* <div>성별 : {passengerData[0].first_gender}</div> */}
+        {/* <div>국적 : {passengerData[0].country}</div> */}
+        <button onClick={postUserData}>PREEPASS 메인</button>
+      </Modal>
+      {/* 모달영역 */}
     </CartContainer>
   );
 };

@@ -13,28 +13,46 @@ const RightCont = ({ mapInfo }) => {
     };
     mapRef.current = new kakao.maps.Map(container, options);
 
+    // const overlayInfos = mapInfo?.map(info => {
+    //   return {
+    //     title: info.name,
+    //     lat: info.latitude,
+    //     lng: info.longtitude,
+    //     img: info.image_url,
+    //     price: info.price,
+    //     region: info.region,
+    //     desc: info.description,
+    //   };
+    // });
+
     const overlayInfos = mapInfo?.map(info => {
       return {
-        title: info.name,
+        title: info.city_name,
         lat: info.latitude,
-        lng: info.longtitude,
-        img: info.image_url,
-        price: info.price,
-        region: info.region,
-        desc: info.description,
+        lng: info.longitude,
+        img: info.image,
+        price: info.code,
+        // region: info.code,
+        // desc: info.description,
       };
     });
 
+    // console.log(mapInfo);
+    // console.log(overlayInfos);
+
+    // overlayInfos.forEach(data => {
+    //   let content = `<div class="overlayAirBox"><div class="imgBox"><img class="overlayAirImg" src=${
+    //     data.img
+    //   }/></div><div class="AirInfoWrap"><h2 class="AirName">${
+    //     data.title
+    //   }</h2><span class="AirRegion">${
+    //     data.region
+    //   }</span></span><strong class="AirPrice">${Number(
+    //     data.price
+    //   ).toLocaleString()}</strong></div><div class="Arrow"></div></div><div class="btView">`;
+
     overlayInfos.forEach(data => {
-      let content = `<div class="overlayAirBox"><div class="imgBox"><img class="overlayAirImg" src=${
-        data.img
-      }/></div><div class="AirInfoWrap"><h2 class="AirName">${
-        data.title
-      }</h2><span class="AirRegion">${
-        data.region
-      }</span></span><strong class="AirPrice">${Number(
-        data.price
-      ).toLocaleString()}</strong></div><div class="Arrow"></div></div><div class="btView">`;
+      let content = `<div class="overlayAirBox"><div class="imgBox"><img class="overlayAirImg" src=${data.img}/></div><div class="AirInfoWrap"><h2 class="AirName">${data.title}</h2></span><strong class="AirPrice">${data.price}</strong></div><div class="Arrow"></div></div><div class="btView">`;
 
       let position = new kakao.maps.LatLng(data.lat, data.lng);
 

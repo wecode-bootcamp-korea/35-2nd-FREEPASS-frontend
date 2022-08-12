@@ -101,7 +101,7 @@ const NavContainer = styled.div`
   height: 12vh;
   top: 0;
   padding: 0 60px;
-  z-index: 999;
+  z-index: 8;
   background-color: #f8f8f8;
 `;
 
@@ -164,7 +164,7 @@ const NavTopWrap = styled.div`
   width: 50%;
   height: 100%;
   padding-right: 10px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 `;
 
 const NavImage = styled.img`
