@@ -47,15 +47,15 @@ Back-end : 손찬규, 박정용
  - react font awesome
  
 ## 📅 구현기능
-❤️ 카카오 맵 API를 이용해서 backEnd와 통신해서 data로 화면에 렌더링
-❤️ 모달창에서 선택된 항공권 리스트를 화면에 렌더링
-❤️ react swiper, anti design 라이브러리를 사용해서 mock data로 화면 렌더링
-❤️ fetch로 backEnd와 통신하여 항공 모달 도시 검색기능 구현
-❤️ query parameter, navigate, location로 항공 모달에서 항공 리스트 data로 데이터 전송
-❤️ 항공 리스트 페이지 query parameter로 필터링 가능
-❤️ 항공 모달 5개의 tap menu안에 각각 4개의 tap menu 기능
-❤️ OAuth 2.0을 이용한 소셜 로그인 구현
-❤️ git, 오픈소스에 올리면 안되는 값들을 외부파일 (.env)에 환경변수를 정의하여 로그인 구현에 사용 
+❤️ 카카오 맵 API를 이용해서 backEnd와 통신해서 data로 화면에 렌더링 <br />
+❤️ 모달창에서 선택된 항공권 리스트를 화면에 렌더링 <br />
+❤️ react swiper, anti design 라이브러리를 사용해서 mock data로 화면 렌더링 <br />
+❤️ fetch로 backEnd와 통신하여 항공 모달 도시 검색기능 구현 <br />
+❤️ query parameter, navigate, location로 항공 모달에서 항공 리스트 data로 데이터 전송 <br />
+❤️ 항공 리스트 페이지 query parameter로 필터링 가능 <br />
+❤️ 항공 모달 5개의 tap menu안에 각각 4개의 tap menu 기능 <br />
+❤️ OAuth 2.0을 이용한 소셜 로그인 구현 <br />
+❤️ git, 오픈소스에 올리면 안되는 값들을 외부파일 (.env)에 환경변수를 정의하여 로그인 구현에 사용 <br />
 
 ## 🎥 Youtube 영상 링크
 > [유튜브 최종 데모 영상](https://youtu.be/S5ElqSBUMzM)
