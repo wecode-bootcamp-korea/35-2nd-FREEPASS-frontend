@@ -17,30 +17,35 @@ const AirList = () => {
 
   // MadalData
   useEffect(() => {
-    fetch(`http://10.58.7.15:8000/flights/schedules${location.search}`)
+    fetch(`http://43.200.163.205:8000/flights/schedules${location.search}`)
       .then(res => res.json())
       .then(data => {
         setModalData(data.location_result);
       });
-  });
+  }, []);
 
   useEffect(() => {
     fetch('/data/ToggleData.json')
       .then(res => res.json())
       .then(data => setToggleData(data));
   }, []);
+
   //TicketData
   useEffect(() => {
-    fetch(`http://10.58.7.15:8000/flights/schedules${location.search}`)
+    fetch(`http://43.200.163.205:8000/flights/schedules${location.search}`)
       .then(res => res.json())
       .then(data => {
-        setTicketData(
-          modalData.departure_date?.length === 2
-            ? data.round_trip_result
-            : data.one_way_result
-        );
+        const obj = {
+          one_way_result: data.one_way_result,
+          round_trip_result: data.round_trip_result,
+        };
+        modalData.departure_date.length === 2
+          ? setTicketData(obj)
+          : setTicketData(data.one_way_result);
       });
   }, [location.search, modalData]);
+  // [...data.one_way_result.concat(data.round_trip_result)]
+  if (Object.keys(ticketData).length === 0) return <>Loading...</>;
   const goToTrue = () => {
     const checkedSolt =
       selectedSort === 1
@@ -75,7 +80,9 @@ const AirList = () => {
         : oneWayQueryString;
 
     navigate(`/airlist${finalQueryString}${query}`);
-    fetch(`http://10.58.7.15:8000/flights/schedules${finalQueryString}${query}`)
+    fetch(
+      `http://43.200.163.205:8000/flights/schedules${finalQueryString}${query}`
+    )
       .then(res => res.json())
       .then(data => {
         setTicketData(
@@ -84,6 +91,7 @@ const AirList = () => {
             : data.one_way_result
         );
       });
+    window.location.reload();
   };
 
   const toggleList = id => {
@@ -104,9 +112,11 @@ const AirList = () => {
     }
   };
 
-  const handleNow = () => {
-    setIsNow(true);
-  };
+  // const handleNow = e => {
+
+  // };
+  const ticketDataArr = Object.values(ticketData);
+  console.log(ticketDataArr);
   return (
     <Wrapper>
       <ModalFilterBar modalData={modalData} />
@@ -150,10 +160,8 @@ const AirList = () => {
                       title.list.map(list => (
                         <HideListBox key={list.id}>
                           <Content>
-                            <img src={list.link} alt="logo" />
-
+                            <img src={list.link} alt="" />
                             {list.filter}
-                            {/* {filter.map((check,i)=>( */}
                             <Input
                               type="checkbox"
                               onChange={
@@ -184,56 +192,189 @@ const AirList = () => {
               <span> 20% </span>
               할인 쿠폰 제공!
             </CouponBar>
-            {ticketData.map(result => {
-              return (
-                <TicketCardContainer key={result.flight_id}>
-                  <TicketCard>
-                    <Logo>
-                      <img src={result.airline_logo} alt="airLogo" />
-                      <AirLine>{result.airline_name}</AirLine>
-                    </Logo>
-                    <AirLineNumber>{result.airplane_name}</AirLineNumber>
-                    <TimeInfo>
-                      <li>
-                        <DepartTime>
-                          {result.departure_time.slice(0, 5)}
-                        </DepartTime>
-                        <DePartLocation>
-                          {result.departure_location_name}{' '}
-                          {result.departure_location_code}
-                        </DePartLocation>
-                      </li>
-                      <li>
-                        <ArriveTime>
-                          {result.arrival_time.slice(0, 5)}
-                        </ArriveTime>
-                        <ArriveLocation>
-                          {result.arrival_location_name}{' '}
-                          {result.arrival_location_code}
-                        </ArriveLocation>
-                      </li>
-                    </TimeInfo>
-                    <PriceInfoContainer>
-                      <TicketTotalPrice>
-                        {parseInt(result.price)}원~
-                      </TicketTotalPrice>
-                      <PriceInfo>
-                        <SeatInfo>잔여 {result.remaining_seat}석~</SeatInfo>
-                        <ToTalPrice>
-                          총 {result.passenger_count}인{' '}
-                          {parseInt(result.total_price)}원{' '}
-                        </ToTalPrice>
-                      </PriceInfo>
-                    </PriceInfoContainer>
-                    <ReservationButton onClick={handleNow}>
-                      예약
-                    </ReservationButton>
-                  </TicketCard>
-                  <AirLineDetail>항공편 세부정보</AirLineDetail>
-                  <PricePlusButton>가격 더 보기 </PricePlusButton>
-                </TicketCardContainer>
-              );
-            })}
+            {modalData.departure_date?.length === 1
+              ? ticketData &&
+                ticketData.map(result => {
+                  // console.log('ticketDataArr:', ticketDataArr[0]);
+                  // console.log('result:', result);
+                  // if (ticketDataArr[0].length === 0) return <div>zzzz</div>;
+                  return (
+                    <TicketCardContainer key={result.flight_id}>
+                      <TicketCard>
+                        <Logo>
+                          <img src={result.airline_logo} alt="airLogo" />
+                          <AirLine>{result.airline_name}</AirLine>
+                        </Logo>
+                        <AirLineNumber>{result.airplane_name}</AirLineNumber>
+                        <TimeInfo>
+                          <li>
+                            <DepartTime>
+                              {result?.departure_time?.slice(0, 5)}
+                            </DepartTime>
+                            <DePartLocation>
+                              {result.departure_location_name}{' '}
+                              {result.departure_location_code}
+                            </DePartLocation>
+                          </li>
+                          <li>
+                            <ArriveTime>
+                              {result?.arrival_time?.slice(0, 5)}
+                            </ArriveTime>
+                            <ArriveLocation>
+                              {result.arrival_location_name}{' '}
+                              {result.arrival_location_code}
+                            </ArriveLocation>
+                          </li>
+                        </TimeInfo>
+                        <PriceInfoContainer>
+                          <TicketTotalPrice>
+                            {parseInt(result.price)}원~
+                          </TicketTotalPrice>
+                          <PriceInfo>
+                            <SeatInfo>잔여 {result.remaining_seat}석~</SeatInfo>
+                            <ToTalPrice>
+                              총 {result.passenger_count}인{' '}
+                              {parseInt(result.total_price)}원{' '}
+                            </ToTalPrice>
+                          </PriceInfo>
+                        </PriceInfoContainer>
+                        <ReservationButton
+                          onClick={e => {
+                            console.log(result);
+                            navigate('/aircart', { state: { result } });
+                          }}
+                        >
+                          예약
+                        </ReservationButton>
+                      </TicketCard>
+                      <AirLineDetail>항공편 세부정보</AirLineDetail>
+                      <PricePlusButton>가격 더 보기 </PricePlusButton>
+                    </TicketCardContainer>
+                  );
+                })
+              : null}
+
+            {modalData.departure_date?.length === 2
+              ? ticketDataArr[0] &&
+                ticketDataArr[0].map(result => {
+                  // console.log('ticketDataArr:', ticketDataArr[0]);
+                  // console.log('result:', result);
+                  // if (ticketDataArr[0].length === 0) return <div>zzzz</div>;
+                  return (
+                    <TicketCardContainer key={result.flight_id}>
+                      <TicketCard>
+                        <Logo>
+                          <img src={result.airline_logo} alt="airLogo" />
+                          <AirLine>{result.airline_name}</AirLine>
+                        </Logo>
+                        <AirLineNumber>{result.airplane_name}</AirLineNumber>
+                        <TimeInfo>
+                          <li>
+                            <DepartTime>
+                              {result?.departure_time?.slice(0, 5)}
+                            </DepartTime>
+                            <DePartLocation>
+                              {result.departure_location_name}{' '}
+                              {result.departure_location_code}
+                            </DePartLocation>
+                          </li>
+                          <li>
+                            <ArriveTime>
+                              {result?.arrival_time?.slice(0, 5)}
+                            </ArriveTime>
+                            <ArriveLocation>
+                              {result.arrival_location_name}{' '}
+                              {result.arrival_location_code}
+                            </ArriveLocation>
+                          </li>
+                        </TimeInfo>
+                        <PriceInfoContainer>
+                          <TicketTotalPrice>
+                            {parseInt(result.price)}원~
+                          </TicketTotalPrice>
+                          <PriceInfo>
+                            <SeatInfo>잔여 {result.remaining_seat}석~</SeatInfo>
+                            <ToTalPrice>
+                              총 {result.passenger_count}인{' '}
+                              {parseInt(result.total_price)}원{' '}
+                            </ToTalPrice>
+                          </PriceInfo>
+                        </PriceInfoContainer>
+                        <ReservationButton
+                          onClick={e => {
+                            console.log(result);
+                            navigate('/aircart', { state: { result } });
+                          }}
+                        >
+                          예약
+                        </ReservationButton>
+                      </TicketCard>
+                      <AirLineDetail>항공편 세부정보</AirLineDetail>
+                      <PricePlusButton>가격 더 보기 </PricePlusButton>
+                    </TicketCardContainer>
+                  );
+                })
+              : null}
+            {modalData.departure_date?.length === 2
+              ? ticketDataArr[1].map(result => {
+                  // console.log('ticketDataArr:', ticketDataArr[0]);
+                  // console.log('result:', result);
+                  // if (ticketDataArr[0].length === 0) return <div>zzzz</div>;
+                  return (
+                    <TicketCardContainer key={result.flight_id}>
+                      <TicketCard>
+                        <Logo>
+                          <img src={result.airline_logo} alt="airLogo" />
+                          <AirLine>{result.airline_name}</AirLine>
+                        </Logo>
+                        <AirLineNumber>{result.airplane_name}</AirLineNumber>
+                        <TimeInfo>
+                          <li>
+                            <DepartTime>
+                              {result?.departure_time?.slice(0, 5)}
+                            </DepartTime>
+                            <DePartLocation>
+                              {result.departure_location_name}{' '}
+                              {result.departure_location_code}
+                            </DePartLocation>
+                          </li>
+                          <li>
+                            <ArriveTime>
+                              {result?.arrival_time?.slice(0, 5)}
+                            </ArriveTime>
+                            <ArriveLocation>
+                              {result.arrival_location_name}{' '}
+                              {result.arrival_location_code}
+                            </ArriveLocation>
+                          </li>
+                        </TimeInfo>
+                        <PriceInfoContainer>
+                          <TicketTotalPrice>
+                            {parseInt(result.price)}원~
+                          </TicketTotalPrice>
+                          <PriceInfo>
+                            <SeatInfo>잔여 {result.remaining_seat}석~</SeatInfo>
+                            <ToTalPrice>
+                              총 {result.passenger_count}인{' '}
+                              {parseInt(result.total_price)}원{' '}
+                            </ToTalPrice>
+                          </PriceInfo>
+                        </PriceInfoContainer>
+                        <ReservationButton
+                          onClick={e => {
+                            console.log(result);
+                            navigate('/aircart', { state: { result } });
+                          }}
+                        >
+                          예약
+                        </ReservationButton>
+                      </TicketCard>
+                      <AirLineDetail>항공편 세부정보</AirLineDetail>
+                      <PricePlusButton>가격 더 보기 </PricePlusButton>
+                    </TicketCardContainer>
+                  );
+                })
+              : null}
           </ScheduleWrap>
         </AirListContainer>
       </Container>
@@ -242,9 +383,9 @@ const AirList = () => {
 };
 export default AirList;
 const Wrapper = styled.div`
-  height: 1900px;
+  height: 2200px;
   margin: 0;
-  padding-top: 305px;
+  padding-top: 25px;
   background-color: #f8f8f8;
 `;
 

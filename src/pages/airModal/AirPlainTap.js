@@ -14,7 +14,7 @@ const AirPlainTap = () => {
     setIsLoading(true);
     const departure_date = hyphenBoardStartDay.slice(0, 8);
     const arrival_date = hyphenBoardEndDay.slice(0, 8);
-    const seat_class = rating === '전체' ? '' : 'business';
+    const seat_class = rating === '전체' ? 'normal' : 'business';
     const ticket_type = searchSort === '편도' ? 'one_way' : 'round_trip';
     const oneWayQueryString = `?ticket_type=${ticket_type}&departure_location=${departure}&arrival_location=${destination}&departure_date=${`20${departure_date}`}&adult=${adult}&infant=${child}&child=${baby}&remaining_seat=${seat_class}`;
     const roundTripQueryString = `?ticket_type=${ticket_type}&departure_location=${departure}&arrival_location=${destination}&departure_date=${`20${departure_date}`}&departure_date=${`20${arrival_date}`}&adult=${adult}&infant=${child}&child=${baby}&remaining_seat=${seat_class}`;
@@ -246,9 +246,12 @@ const CITYNAME_EN_DATA = [
 const InnerBar = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 25px;
   padding-bottom: 25px;
+  position: relative;
   text-align: left;
   background-color: #f8f8f8;
+  background: #fff;
 `;
 
 const FlightInner = styled.span`

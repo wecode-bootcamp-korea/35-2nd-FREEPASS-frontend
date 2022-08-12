@@ -6,9 +6,8 @@ const Redirect = () => {
   // const navigate = useNavigate();
   const url = new URL(window.location.href);
   const code = url.searchParams.get('code');
-
   const getToken = () => {
-    fetch(`http://43.200.163.205:3000/users/kakao?code=${code}`)
+    fetch(`http://43.200.163.205:8000/users/kakao?code=${code}`)
       .then(res => res.json())
       .then(data => {
         localStorage.setItem('token', data.token);

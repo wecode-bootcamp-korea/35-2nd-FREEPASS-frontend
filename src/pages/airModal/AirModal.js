@@ -56,7 +56,7 @@ const UlDiv = styled.div`
   width: 100%;
   object-fit: cover;
   position: relative;
-  padding-top: 20px;
+  padding-top: 50px;
   background-color: #f8f8f8;
 `;
 

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import AirCart from './pages/AirCart/AirCart';
-import AirList from './pages/AirList';
+import AirList from './pages/AirList/AirList';
 import AirMain from './pages/AirMain/AirMain';
 import AirMap from './pages/AirMap/AirMap';
 import Login from './pages/Login/Login';

@@ -11,25 +11,27 @@ const AirCartTicket = ({ tiketData }) => {
   };
 
   const {
-    kor_origin,
-    depDate,
-    airline,
-    flight_number,
-    en_airline,
-    depTime,
-    origin,
-    arrTime,
-    destination,
+    airline_logo,
+    airline_name,
+    airplane_code,
+    airplane_name,
+    arrival_location_name,
+    arrival_time,
+    departure_location_name,
+    departure_time,
+    passenger_count,
+    price,
     total_price,
-    person,
+    departure_location_code,
+    arrival_location_code,
   } = tiketData;
 
   return (
     <FlightListli>
       <TitleArea>
         <TitleDep>
-          {kor_origin} 가는편
-          <TitleDepDate>{depDate}</TitleDepDate>
+          {departure_location_name} 가는편
+          <TitleDepDate>{departure_time}</TitleDepDate>
         </TitleDep>
         <TitleDepButton onClick={goToAirList}>
           <RedoOutlined />
@@ -39,20 +41,23 @@ const AirCartTicket = ({ tiketData }) => {
         <SchReusltAl>
           <Air>
             <Thumb>
-              <WalletOutlined />
-              <ThumbTitle>{airline}</ThumbTitle>
+              <ThumbTitle src={airline_logo} /> {airline_name}
             </Thumb>
-            <ThumbDepNum>{flight_number} |</ThumbDepNum>
-            <ThumbArrNum>{en_airline}</ThumbArrNum>
+            <ThumbDepNum>{airplane_name} |</ThumbDepNum>
+            <ThumbArrNum>{airplane_code}</ThumbArrNum>
           </Air>
           <TimeInfo>
-            <TimeInfoTime>{depTime}</TimeInfoTime>
-            <TimeInfoPlace>{origin}</TimeInfoPlace>
-            <TimeInfoTime>{arrTime}</TimeInfoTime>
-            <TimeInfoPlace>{destination}</TimeInfoPlace>
+            <TimeInfoTime>{departure_time}</TimeInfoTime>
+            <TimeInfoPlace>
+              {departure_location_name} {departure_location_code}
+            </TimeInfoPlace>
+            <TimeInfoTime>{arrival_time}</TimeInfoTime>
+            <TimeInfoPlace>
+              {arrival_location_name} {arrival_location_code}
+            </TimeInfoPlace>
           </TimeInfo>
           <InterInfo>
-            <InfoDay>총{person}인</InfoDay>
+            <InfoDay>총{passenger_count}인</InfoDay>
             <InfoFightPirce>
               {total_price.toLocaleString('ko-KR')}원
             </InfoFightPirce>
@@ -123,14 +128,16 @@ const Air = styled.div`
 
 const Thumb = styled.span`
   display: block;
+  font-weight: 600;
 `;
 
-const ThumbTitle = styled.span`
+const ThumbTitle = styled.img`
   display: inline-block;
   padding-left: 4px;
   color: #202020;
   font-size: 16px;
   font-weight: 700;
+  width: 10%;
 `;
 
 const ThumbDepNum = styled.span`
