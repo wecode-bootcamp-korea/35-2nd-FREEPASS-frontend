@@ -23,17 +23,14 @@
 ➡️ query parameter, navigate, location로 항공 모달에서 항공 리스트 data로 데이터 전송<br />
 ➡️ 항공 리스트 페이지 query parameter로 필터링 가능<br />
 ➡️ 항공 모달 5개의 tap menu안에 각각 4개의 tap menu 기능<br />
-➡️ OAuth 2.0을 이용한 소셜 로그인 구현
+➡️ OAuth 2.0을 이용한 소셜 로그인 구현<br />
 ➡️ git, 오픈소스에 올리면 안되는 값들을 외부파일 (.env)에 환경변수를 정의하여 로그인 구현에 사용
 
  
  - 사용기술<br />
- Front-end<br />
+ ➡️ Front-end<br />
  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/amazonaws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"><br />
- 
- #
- 
- Back-end<br />
+ ➡️ Back-end<br />
  Phython, Django, MySQL
 -------
 
@@ -60,6 +57,7 @@
  - 네브바
  - 푸터
 
+------
 ## 🥰 사용한 라이브러리 
  - 카카오 로그인 (OAuth2.0)
  - 카카오 맵 API
@@ -80,9 +78,7 @@
 - 팀원간의 실시간 소통 창구
 <img width="389" alt="스크린샷 2022-08-12 오후 12 50 49" src="https://user-images.githubusercontent.com/78889402/184281864-fb7297ca-3f07-4d93-824d-5bbe971df335.png">
 
-
 ### 3. Notion
  - 회의정리 기록, 오늘의 공유/질문 사항, 현재 진행 사항, blocker 공유, 기능 단위 페이지 셍성 후 공유 및 기록
 -------
-## ✈️  회고
-
+## 🚨 회고
