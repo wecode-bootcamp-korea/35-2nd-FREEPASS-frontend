@@ -1,14 +1,11 @@
-# 35기 2차 프로젝트 취뽀 FREE PASS
-
-### ✈️ 프로젝트 소개
-<img width="689" alt="스크린샷 2022-08-12 오후 12 52 38" src="https://user-images.githubusercontent.com/78889402/184282073-10f305ec-11bc-47b4-994c-88b99fcf8d0b.png">
 <img width="689" alt="스크린샷 2022-08-12 오후 12 34 06" src="https://user-images.githubusercontent.com/83544570/184543975-d287a201-9025-4bf3-9a1d-c63ada9aa998.png">
 
-#
+
+# ✈️ 프로젝트 소개
 
 ### 🐥 프론트, 백엔드 깃허브
-> [팀 프로젝트 프론트엔드 GitHub](https://github.com/wecode-bootcamp-korea/35-1st-9roomdroom9-frontend)<br/>
-> [팀 프로젝트 백엔드 GitHub](https://github.com/wecode-bootcamp-korea/35-1st-9roomdroom9-backend)
+> [팀 프로젝트 프론트엔드 GitHub](https://github.com/wecode-bootcamp-korea/35-2nd-FREEPASS-frontend)<br/>
+> [팀 프로젝트 백엔드 GitHub](https://github.com/wecode-bootcamp-korea/35-2nd-FREEPASS-backend)
 
 #
 
@@ -27,8 +24,8 @@
 
 ### 👥 우리 팀 일원!
 
-Front-End : 🐥노정은, 🐶엄성훈, 🐱이현주, ✈🦆이혜진</br>
-Back-end : ⚽️손찬규, 🦅박정용
+Front-End : 🐥 노정은, 🐶 엄성훈, 🐱 이현주, 🦆 이혜진</br>
+Back-end : ⚽️ 손찬규, 🦅 박정용
 
 #
 
@@ -38,8 +35,9 @@ Back-end : ⚽️손찬규, 🦅박정용
 
 #
 
-### 👩🏻‍💻 FRONTEND 페이지<br/>
-#### [🐥노정은님](https://jeongeuni.tistory.com/54?category=1103401), [🐶엄성훈님](), [🐱이현주님](), [🦆이혜진님]()<br>
+### 👩🏻‍💻 FRONTEND 각 담당페이지<br/>
+
+#### [🐥 노정은님](https://jeongeuni.tistory.com/54?category=1103401), [🐶 엄성훈님](), [🐱 이현주님](), [🦆 이혜진님]()<br>
 - (클릭 시 블로그로 이동!)
 - Navigation Bar 🐱
 - Footer 🐱
@@ -53,9 +51,6 @@ Back-end : ⚽️손찬규, 🦅박정용
 - 항공권 예약 및 결제 페이지 (navigate state 전달) 🐶
 - 로딩 페이지 🐥
 
-#
-
-### 👩🏻‍💻 FRONTEND 각자의 역할
 <img width="508" alt="스크린샷 2022-08-14 오후 11 55 48" src="https://user-images.githubusercontent.com/78889402/184542683-c3a14f20-1d11-4c4b-9a67-5d0e811c48aa.png">
 
 #
@@ -75,13 +70,13 @@ Back-end : ⚽️손찬규, 🦅박정용
  
 ### 📅 구현기능
 ❤️ 카카오 맵 API를 이용해서 backEnd와 통신해서 data로 화면에 렌더링 <br />
-❤️ 모달창에서 선택된 항공권 리스트를 화면에 렌더링 <br />
+🧡 모달창에서 선택된 항공권 리스트를 화면에 렌더링 <br />
 ❤️ react swiper, anti design 라이브러리를 사용해서 mock data로 화면 렌더링 <br />
-❤️ fetch로 backEnd와 통신하여 항공 모달 도시 검색기능 구현 <br />
+🧡 fetch로 backEnd와 통신하여 항공 모달 도시 검색기능 구현 <br />
 ❤️ query parameter, navigate, location로 항공 모달에서 항공 리스트 data로 데이터 전송 <br />
-❤️ 항공 리스트 페이지 query parameter로 필터링 가능 <br />
+🧡 항공 리스트 페이지 query parameter로 필터링 가능 <br />
 ❤️ 항공 모달 5개의 tap menu안에 각각 4개의 tap menu 기능 <br />
-❤️ OAuth 2.0을 이용한 소셜 로그인 구현 <br />
+🧡 OAuth 2.0을 이용한 소셜 로그인 구현 <br />
 ❤️ git, 오픈소스에 올리면 안되는 값들을 외부파일 (.env)에 환경변수를 정의하여 로그인 구현에 사용 <br />
 
 #
