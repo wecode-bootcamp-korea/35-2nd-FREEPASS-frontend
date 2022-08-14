@@ -75,7 +75,8 @@ Back-end : 손찬규, 박정용
  - 회의정리 기록, 오늘의 공유/질문 사항, 현재 진행 사항, blocker 공유, 기능 단위 페이지 셍성 후 공유 및 기록
 
 ## ✈️  회고
-![](여기에 이미지)
+![노정은 회고록(1) - 기능 구현에 대한 회고](https://jeongeuni.tistory.com/53)
+![노정은 회고록(2) - 팀 프로젝트에 대한 회고](https://jeongeuni.tistory.com/54)
 #
 
 ### Reference
