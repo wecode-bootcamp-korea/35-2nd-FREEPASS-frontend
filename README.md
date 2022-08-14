@@ -1,4 +1,4 @@
-<img width="689" alt="스크린샷 2022-08-12 오후 12 34 06" src="https://user-images.githubusercontent.com/83544570/184543975-d287a201-9025-4bf3-9a1d-c63ada9aa998.png">
+<img width="689" alt="스크린샷 2022-08-12 오후 12 34 06" src="https://user-images.githubusercontent.com/83544570/184546628-78accbd5-dc81-4f0f-9276-f19eabdba1d3.png">
 
 
 # ✈️ 프로젝트 소개
@@ -68,9 +68,98 @@ Back-end : ⚽️ 손찬규, 🦅 박정용
 
 #
 
-### 🎥 Youtube 영상 링크
-> [유튜브 최종 데모 영상](https://youtu.be/S5ElqSBUMzM)
- 
+### 🎥 각 페이지별 View
+> [유튜브 데모 영상](https://youtu.be/S5ElqSBUMzM)
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        메인페이지
+      </th>
+      <th>
+        ESG페이지
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546658-d0c71996-a9b8-442d-9f75-5b6d8e1f181a.png">
+      </td>
+      <td align="center">
+          <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546668-7a340397-a975-4c72-814a-fc2712aa13ce.jpg">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>
+        항공페이지
+      </th>
+      <th>
+        로그인
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546670-cbb90d9f-48aa-4314-afe6-416e5ecb2c75.png">
+      </td>
+      <td align="center">
+          <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546648-cc5bb318-8140-42f6-9b6e-a89846432c57.png">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>
+        모달페이지
+      </th>
+      <th>
+        로딩페이지
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546674-a3361803-8c5d-4f0c-9a17-221d7bb3fc1d.jpg">
+      </td>
+      <td align="center">
+          <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546671-c30e9cc7-c935-4c2b-9437-86395d88c62c.jpg">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>
+        리스트페이지
+      </th>
+      <th>
+        예약결제페이지
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546675-8d41aa39-efb4-4730-96ca-98072b710934.png">
+      </td>
+      <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184546676-34799bdc-3032-49cd-a688-dfa1f13e7ad0.png">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 # 
 
 ### 💫 프로젝트 협업 Tool
@@ -79,7 +168,7 @@ Back-end : ⚽️ 손찬규, 🦅 박정용
 
 - Slack : 팀원간의 실시간 소통 창구.
 
-- Trello : 기능 단위로 카드를 생성하여 프로젝트가 sprint 미팅대로 잘 이루어졌는지 파악하고 stand up 미팅 활용한 도구로 활용.
+- Trello : 기능 단위로 카드를 생성, Sprint 단위로 진행했는지와 Stand up 미팅 툴로 활용.
 
 - Notion : 회의정리 기록, 오늘의 공유/질문 사항, 현재 진행 사항, blocker 공유, 기능 단위 페이지 셍성 후 공유 및 기록.
 
