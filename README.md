@@ -36,6 +36,9 @@ Back-end : 손찬규, 박정용
  - 푸터
  - 로딩 페이지
 
+## 👩🏻‍💻 FRONTEND 각자의 역할
+<img width="508" alt="스크린샷 2022-08-14 오후 11 55 48" src="https://user-images.githubusercontent.com/78889402/184542683-c3a14f20-1d11-4c4b-9a67-5d0e811c48aa.png">
+
 ## 🥰 사용한 라이브러리 
  - 카카오 로그인 (OAuth2.0)
  - 카카오 맵 API
