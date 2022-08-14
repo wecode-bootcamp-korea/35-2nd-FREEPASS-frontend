@@ -18,7 +18,7 @@
 #
 
 ### 📅 작업기간
- 2022년 8월 1일 ~ 2002년 8월 12일
+ 2022년 8월 1일(월) ~ 2022년 8월 12일(금) : 총 10일
 
 #
 
@@ -41,43 +41,30 @@ Back-end : ⚽️ 손찬규, 🦅 박정용
 - (클릭 시 블로그로 이동!)
 - Navigation Bar 🐱
 - Footer 🐱
-- 회원가입, 로그인 페이지 🐱
-- 메인 페이지 🐱
-- 지도 페이지 🐶
-- ESG 페이지 🐶
-- 항공 메인 페이지 🐶
-- 항공 모달 (항공권 옵션 선택) (query parameter) 🐥
+- 회원가입, 로그인 페이지 🐱  / 카카오 로그인 (OAuth2.0)
+- 메인 페이지 🐱 / Swiper(Carousel)
+- 지도 페이지 🐶 / 카카오 맵 API
+- ESG 페이지 🐶 / Ant Design(Pull Page)
+- 항공 메인 페이지 🐶 / Swiper(Carousel), Ant Design(Carousel)
+- 항공 모달 (항공권 옵션 선택) (query parameter) 🐥 / DatePicker, React Modal
 - 항공권 리스트 페이지 (query parameter) 🦆
 - 항공권 예약 및 결제 페이지 (navigate state 전달) 🐶
-- 로딩 페이지 🐥
+- 로딩 페이지 🐥 / React Spinner
 
 <img width="508" alt="스크린샷 2022-08-14 오후 11 55 48" src="https://user-images.githubusercontent.com/78889402/184542683-c3a14f20-1d11-4c4b-9a67-5d0e811c48aa.png">
 
 #
-
-### 🥰 사용한 라이브러리 
- - 카카오 로그인 (OAuth2.0)
- - 카카오 맵 API
- - swiper
- - datePicker
- - react modal
- - anti desigh
- - react icon
- - react font awesome
- - react spinner
- 
-#
  
 ### 📅 구현기능
-❤️ 카카오 맵 API를 이용해서 backEnd와 통신해서 data로 화면에 렌더링 <br />
-🧡 모달창에서 선택된 항공권 리스트를 화면에 렌더링 <br />
-❤️ react swiper, anti design 라이브러리를 사용해서 mock data로 화면 렌더링 <br />
-🧡 fetch로 backEnd와 통신하여 항공 모달 도시 검색기능 구현 <br />
-❤️ query parameter, navigate, location로 항공 모달에서 항공 리스트 data로 데이터 전송 <br />
-🧡 항공 리스트 페이지 query parameter로 필터링 가능 <br />
-❤️ 항공 모달 5개의 tap menu안에 각각 4개의 tap menu 기능 <br />
-🧡 OAuth 2.0을 이용한 소셜 로그인 구현 <br />
-❤️ git, 오픈소스에 올리면 안되는 값들을 외부파일 (.env)에 환경변수를 정의하여 로그인 구현에 사용 <br />
+- 카카오 맵 API를 이용해서 backEnd와 통신해서 data로 화면에 렌더링 <br />
+- 모달창에서 선택된 항공권 리스트를 화면에 렌더링 <br />
+- react swiper, anti design 라이브러리를 사용해서 mock data로 화면 렌더링 <br />
+- fetch로 backEnd와 통신하여 항공 모달 도시 검색기능 구현 <br />
+- query parameter, navigate, location로 항공 모달에서 항공 리스트 data로 데이터 전송 <br />
+- 항공 리스트 페이지 query parameter로 필터링 가능 <br />
+- 항공 모달 5개의 tap menu안에 각각 4개의 tap menu 기능 <br />
+- OAuth 2.0을 이용한 소셜 로그인 구현 <br />
+- git, 오픈소스에 올리면 안되는 값들을 외부파일 (.env)에 환경변수를 정의하여 로그인 구현에 사용 <br />
 
 #
 
@@ -85,28 +72,61 @@ Back-end : ⚽️ 손찬규, 🦅 박정용
 > [유튜브 최종 데모 영상](https://youtu.be/S5ElqSBUMzM)
  
 # 
- 
-### 💫 프로젝트 협업 도구
-### 1. Trello
-- 기능 단위로 카드를 생성하여 프로젝트가 sprint 미팅대로 잘 이루어졌는지 파악하고 stand up 미팅 활용한 도구로 활용
-<img width="789" alt="스크린샷 2022-08-12 오후 12 49 40" src="https://user-images.githubusercontent.com/78889402/184281756-13baba9c-81db-48d3-b69d-da153f36372d.png">
+
+### 💫 프로젝트 협업 Tool
+
+- GitHub : 각 페이지별 branch 관리.
+
+- Slack : 팀원간의 실시간 소통 창구.
+
+- Trello : 기능 단위로 카드를 생성하여 프로젝트가 sprint 미팅대로 잘 이루어졌는지 파악하고 stand up 미팅 활용한 도구로 활용.
+
+- Notion : 회의정리 기록, 오늘의 공유/질문 사항, 현재 진행 사항, blocker 공유, 기능 단위 페이지 셍성 후 공유 및 기록.
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        트렐로
+      </th>
+      <th>
+        노션
+      </th>
+    </tr>
+       <tr>
+      <th>
+        깃허브
+      </th>
+      <th>
+        슬랙
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184545309-14792748-ce97-449d-a619-dc1f60c80590.jpg">      
+        </td>
+      <td align="center">
+        <img width="789" alt=image" src="https://user-images.githubusercontent.com/83544570/184545339-9336d126-243e-4daa-85b1-fb4044844dbd.jpg">      
+        </td>
+    </tr>
+      <tr>
+      <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184545347-3833d8a5-a195-49a1-8b1a-d83af5fb4db7.jpg">      
+        </td>
+      <td align="center">
+        <img width="789" alt="image" src="https://user-images.githubusercontent.com/83544570/184545358-21bbb0dc-754b-4b96-b8d3-1acd53719fcb.png">      
+        </td>
+    </tr>
+  </tbody>
+</table>
 
 #
 
-### 2. Slack
-- 팀원간의 실시간 소통 창구
-<img width="389" alt="스크린샷 2022-08-12 오후 12 50 49" src="https://user-images.githubusercontent.com/78889402/184281864-fb7297ca-3f07-4d93-824d-5bbe971df335.png">
-
-#
-
-### 3. Notion
- - 회의정리 기록, 오늘의 공유/질문 사항, 현재 진행 사항, blocker 공유, 기능 단위 페이지 셍성 후 공유 및 기록
-
-#
-
-## ✈️  회고
-[노정은 회고록(1) - 기능 구현에 대한 회고](https://jeongeuni.tistory.com/53)  <br />
-[노정은 회고록(2) - 팀 프로젝트에 대한 회고](https://jeongeuni.tistory.com/54)  <br />
+### ✈️ 회고록
+- [🐥 노정은님 회고록(1) - 기능 구현에 대한 회고](https://jeongeuni.tistory.com/53)  <br />
+- [🐥 노정은님 회고록(2) - 팀 프로젝트에 대한 회고](https://jeongeuni.tistory.com/54)  <br />
 
 #
 
