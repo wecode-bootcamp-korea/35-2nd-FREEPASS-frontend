@@ -45,6 +45,7 @@ Back-end : 손찬규, 박정용
  - anti desigh
  - react icon
  - react font awesome
+ - react spinner
  
 ## 📅 구현기능
 ❤️ 카카오 맵 API를 이용해서 backEnd와 통신해서 data로 화면에 렌더링 <br />
