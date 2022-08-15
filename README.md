@@ -46,10 +46,10 @@ Back-end : ⚽️ 손찬규, 🦅 박정용
 - 지도 페이지 🐶 / 카카오 맵 API
 - ESG 페이지 🐶 / Ant Design(Pull Page)
 - 항공 메인 페이지 🐶 / Swiper(Carousel), Ant Design(Carousel)
-- 항공 모달 (항공권 옵션 선택) (query parameter) 🐥 / DatePicker, React Modal
-- 항공권 리스트 페이지 (query parameter) 🦆
+- 항공 모달 (항공권 옵션 선택) (query parameter) 🐥 / DatePicker, React Modal, React font awesome
+- 항공권 리스트 페이지 (query parameter) 🦆, 🐥
 - 항공권 예약 및 결제 페이지 (navigate state 전달) 🐶
-- 로딩 페이지 🐥 / React Spinner
+- 로딩 페이지 🐥 / React Spinner, React icon
 
 <img width="508" alt="스크린샷 2022-08-14 오후 11 55 48" src="https://user-images.githubusercontent.com/78889402/184542683-c3a14f20-1d11-4c4b-9a67-5d0e811c48aa.png">
 
