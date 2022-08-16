@@ -2,6 +2,7 @@
 
 
 # ✈️ 프로젝트 소개
+> [AWS배포 주소](http://freepass2.s3-website.ap-northeast-2.amazonaws.com/)<br/>
 
 ### 🐥 프론트, 백엔드 깃허브
 > [팀 프로젝트 프론트엔드 GitHub](https://github.com/wecode-bootcamp-korea/35-2nd-FREEPASS-frontend)<br/>
