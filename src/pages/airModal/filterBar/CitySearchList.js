@@ -1,17 +1,25 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { clickCityDep, clickCityDes } from '../../../store/contry';
 import styled from 'styled-components';
-const CitySearchList = ({ cityMockData, name, clickCity }) => {
+
+const CitySearchList = ({ cityMockData, name }) => {
+  const dispatch = useDispatch();
+
   return (
     <SearchListDiv>
-      {cityMockData.map(data => {
+      {cityMockData.map(({ id, city_name, code }) => {
         return (
           <ListCityName
-            id={name}
-            onClick={e => clickCity(e, data.city_name)}
-            key={data.id}
+            key={id}
+            onClick={() => {
+              name === 'departure'
+                ? dispatch(clickCityDep(city_name))
+                : dispatch(clickCityDes(city_name));
+            }}
           >
-            {`${data.city_name} `}
-            <ListCityNameEn>{data.code}</ListCityNameEn>
+            {`${city_name} `}
+            <ListCityNameEn>{code}</ListCityNameEn>
           </ListCityName>
         );
       })}

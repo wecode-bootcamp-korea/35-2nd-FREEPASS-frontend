@@ -7,8 +7,6 @@ const Login = () => {
   &redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}
   &response_type=code`;
 
-  console.log(Kakao_URL);
-
   return (
     <LoginContainer>
       <LoginWrapper>

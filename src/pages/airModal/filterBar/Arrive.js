@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { clickCityDep, clickCityDes } from '../../../store/contry';
 import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import CitySearchList from './CitySearchList';
 import { BASE_URL } from '../../../config';
 
-const Arrive = ({ data, cityData, name, clickImgDiv, clickCity }) => {
+const Arrive = ({ title, name }) => {
+  const cityImageData = useSelector(state => state.cityImageData);
+  const dispatch = useDispatch();
   const [cityInput, setCityInput] = useState('');
   const [cityMockData, setCityMockData] = useState([]);
 
-  //`${BASE_URL}/flights/locations`
-  //data/CITY_API.json
   useEffect(() => {
-    fetch(`${BASE_URL}/flights/locations`)
+    // fetch(`${BASE_URL}/flights/locations`)
+    fetch('/data/CITY_API.json')
       .then(res => res.json())
       .then(data => {
         setCityMockData(() => data.result);
@@ -22,8 +25,8 @@ const Arrive = ({ data, cityData, name, clickImgDiv, clickCity }) => {
     setCityInput(() => e.target.value);
   };
 
-  const isData = cityMockData.length !== 0;
-  if (!isData) return <div>로딩중입니다.</div>;
+  if (!(cityMockData.length && cityImageData.length))
+    return <div>로딩중입니다.</div>;
 
   const sortedCities = cityMockData.filter(data => {
     return data.city_name.includes(cityInput);
@@ -32,32 +35,29 @@ const Arrive = ({ data, cityData, name, clickImgDiv, clickCity }) => {
   return (
     <ArriveDiv>
       <RightDiv>
-        <p>{data}를</p>
+        <p>{title}를</p>
         <p>선택해주세요.</p>
       </RightDiv>
       <CenterDiv>
         <SearchInput changeCityData={changeCityData} />
-        <CitySearchList
-          name={name}
-          clickCity={clickCity}
-          cityMockData={sortedCities}
-        />
+        <CitySearchList name={name} cityMockData={sortedCities} />
       </CenterDiv>
       <LeftDiv>
         <Text>국내</Text>
         <CityList>
-          {cityData.map(data => {
+          {cityImageData[0].map(({ id, img, city_name_ko }) => {
             return (
-              <ImgDiv key={data.id}>
+              <ImgDiv key={id}>
                 <img
-                  name={name}
-                  src={data.img}
-                  alt={data.city_name_ko}
-                  onClick={e => {
-                    clickImgDiv(e, data.city_name_ko);
+                  src={img}
+                  alt={city_name_ko}
+                  onClick={() => {
+                    name === 'departure'
+                      ? dispatch(clickCityDep(city_name_ko))
+                      : dispatch(clickCityDes(city_name_ko));
                   }}
                 />
-                <p>{data.city_name_ko}</p>
+                <p>{city_name_ko}</p>
               </ImgDiv>
             );
           })}
