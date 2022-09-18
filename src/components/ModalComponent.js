@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import Modal from 'react-modal';
-import AirModal from '../pages/airModal/AirModal';
+import AirModal from '../pages/AirModal/AirModal';
 Modal.setAppElement('#root');
 
 const ModalComponent = () => {

@@ -10,7 +10,7 @@ import Login from './pages/Login/Login';
 import Redirect from './pages/Redirect';
 import Main from './pages/Main';
 import Esg from './pages/Esg/Esg';
-import AirModal from './pages/airModal/AirModal';
+import AirModal from './pages/AirModal/AirModal';
 import Loading from './components/Loading';
 import ModalFilterBar from '../src/components/ModalFilterBar';
 

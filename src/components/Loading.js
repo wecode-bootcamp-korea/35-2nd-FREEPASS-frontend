@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import BarLoader from 'react-spinners/BarLoader';
-// import { IoAirplaneSharp } from 'react-icons/io5';
-// import { AiOutlineSmile } from 'react-icons/ai';
 import { BiWinkSmile } from 'react-icons/bi';
 import { GiAirplaneArrival, GiAirplaneDeparture } from 'react-icons/gi';
 

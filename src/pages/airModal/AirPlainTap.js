@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCityImageData } from '../../store/city';
 import styled, { css } from 'styled-components';
 import Arrive from './filterBar/Arrive';
 import Dep from './filterBar/Dep';
@@ -10,14 +12,23 @@ import Loading from '../../components/Loading';
 const AirPlainTap = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
+  const { contry, passengerInfo, board } = useSelector(state => state);
+  const { departure, destination } = contry;
+  const { adult, child, baby, rating } = passengerInfo;
+  const { boardStartDay, boardEndDay, search } = board;
+  const [currentId, setCurrentId] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+
   const goToAirList = () => {
     setIsLoading(true);
-    const departure_date = hyphenBoardStartDay.slice(0, 8);
-    const arrival_date = hyphenBoardEndDay.slice(0, 8);
+    const departure_date = boardStartDay.slice(0, 8).replace(/\./g, '-'); //"22.09.22(목)" -> "22-09-22"형식으로 바꾸기
+    const arrival_date = boardEndDay.slice(0, 8).replace(/\./g, '-'); //"22.09.22(목)" -> "22-09-22"형식으로 바꾸기
     const seat_class = rating === '전체' ? 'normal' : 'business';
-    const ticket_type = searchSort === '편도' ? 'one_way' : 'round_trip';
+    const ticket_type = search === '편도' ? 'one_way' : 'round_trip';
     const oneWayQueryString = `?ticket_type=${ticket_type}&departure_location=${departure}&arrival_location=${destination}&departure_date=${`20${departure_date}`}&adult=${adult}&infant=${child}&child=${baby}&remaining_seat=${seat_class}`;
-    const roundTripQueryString = `?ticket_type=${ticket_type}&departure_location=${departure}&arrival_location=${destination}&departure_date=${`20${departure_date}`}&departure_date=${`20${arrival_date}`}&adult=${adult}&infant=${child}&child=${baby}&remaining_seat=${seat_class}`;
+    const roundTripQueryString =
+      oneWayQueryString + `&departure_date=${`20${arrival_date}`}`;
     const finalQueryString =
       ticket_type === 'one_way' ? oneWayQueryString : roundTripQueryString;
     setTimeout(() => {
@@ -28,79 +39,13 @@ const AirPlainTap = () => {
     }, 5000);
   };
 
-  const [currentId, setCurrentId] = useState(1);
-  const [cityData, setcityData] = useState([]);
-  const [contry, setContry] = useState({
-    departure: '김포',
-    destination: '어디로 떠나시나요?',
-  });
-  const { departure, destination } = contry;
-  const [boardStartDay, setBoardStartDay] = useState('탑승일을 선택하세요.');
-  const [hyphenBoardStartDay, setHyphenBoardStartDay] = useState('');
-  const [boardEndDay, setBoardEndDay] = useState('');
-  const [hyphenBoardEndDay, setHyphenBoardEndDay] = useState('');
-  const [passengerInfo, setPassengerInfo] = useState({
-    adult: 1,
-    child: 0,
-    baby: 0,
-    rating: '전체',
-  });
-  const { adult, child, baby, rating } = passengerInfo;
-  const [searchSort, setSearchSort] = useState('검색');
-  const [isLoading, setIsLoading] = useState(false);
-  const changeSearchSort = (startDay, endDay) => {
-    startDay === endDay ? setSearchSort('편도') : setSearchSort('왕복');
-  };
-
   useEffect(() => {
     fetch('/data/CITYDATA_ARR.json')
       .then(res => res.json())
       .then(data => {
-        setcityData(() => data);
+        dispatch(setCityImageData(data));
       });
   }, []);
-
-  const plusPassengerNumber = e => {
-    const { name } = e.target;
-    setPassengerInfo(prev => ({ ...prev, [name]: prev[name] + 1 }));
-  };
-
-  const minusPassengerNumber = e => {
-    const { name } = e.target;
-    setPassengerInfo(prev => ({ ...prev, [name]: prev[name] - 1 }));
-  };
-
-  const changeRating = rating => {
-    setPassengerInfo(prev => ({ ...prev, rating }));
-  };
-
-  const clickImgDiv = (e, cityName) => {
-    const { name } = e.target;
-    setContry(prev => ({ ...prev, [name]: cityName }));
-  };
-
-  const clickCity = (e, cityName) => {
-    const { id } = e.target;
-    setContry(prev => ({ ...prev, [id]: cityName }));
-  };
-
-  const departureToEn = CITYNAME_EN_DATA.map(data => {
-    return data[departure];
-  });
-
-  const destinationToEn = CITYNAME_EN_DATA.map(data => {
-    return data[destination];
-  });
-
-  const changeBoardStartDay = (startDate, hyphenStartDate) => {
-    setBoardStartDay(startDate);
-    setHyphenBoardStartDay(hyphenStartDate);
-  };
-
-  const changeBoardEndDay = (endDate, hyphenEndDate) => {
-    setBoardEndDay(endDate);
-    setHyphenBoardEndDay(hyphenEndDate);
-  };
 
   const clickHandler = id => {
     setCurrentId(id);
@@ -109,42 +54,6 @@ const AirPlainTap = () => {
   const adultCount = `성인${adult},`;
   const childCount = `${child !== 0 ? `소아${child},` : ''}`;
   const babyCount = `${baby !== 0 ? `유아${baby},` : ''}`;
-
-  const MAPPING_OBJ = {
-    1: (
-      <Arrive
-        data="출발지"
-        name="departure"
-        cityData={cityData}
-        clickImgDiv={clickImgDiv}
-        clickCity={clickCity}
-      />
-    ),
-    2: (
-      <Arrive
-        data="도착지"
-        name="destination"
-        cityData={cityData}
-        clickImgDiv={clickImgDiv}
-        clickCity={clickCity}
-      />
-    ),
-    3: (
-      <Dep
-        changeBoardStartDay={changeBoardStartDay}
-        changeBoardEndDay={changeBoardEndDay}
-        changeSearchSort={changeSearchSort}
-      />
-    ),
-    4: (
-      <People
-        plusPassengerNumber={plusPassengerNumber}
-        minusPassengerNumber={minusPassengerNumber}
-        changeRating={changeRating}
-        passengerInfo={passengerInfo}
-      />
-    ),
-  };
 
   if (isLoading)
     return (
@@ -165,7 +74,7 @@ const AirPlainTap = () => {
             <Button>
               <Text>
                 {departure}
-                <span>{departureToEn}</span>
+                <span>{CITYNAME_EN_DATA[departure]}</span>
               </Text>
             </Button>
           </Panel>
@@ -174,7 +83,7 @@ const AirPlainTap = () => {
             <Button>
               <Text>
                 {destination}
-                <span>{destinationToEn}</span>
+                <span>{CITYNAME_EN_DATA[destination]}</span>
               </Text>
             </Button>
           </Panel>
@@ -211,7 +120,7 @@ const AirPlainTap = () => {
             }
           }}
         >
-          {searchSort}
+          {search}
         </Search>
       </InnerBar>
       <div>{MAPPING_OBJ[currentId]}</div>
@@ -219,29 +128,34 @@ const AirPlainTap = () => {
   );
 };
 
-const CITYNAME_EN_DATA = [
-  {
-    서울: 'SEL',
-    제주: 'CJU',
-    김포: 'GMP',
-    부산: 'PUS',
-    청주: 'CJJ',
-    광주: 'KWJ',
-    대구: 'TAE',
-    여수: 'RSU',
-    울산: 'USN',
-    양양: 'YNY',
-    이제프스크: 'LJK',
-    보이제: 'BOI',
-    제네바: 'GVA',
-    콘제도: 'RNI',
-    제네럴산토스: 'GES',
-    제양: 'SWA',
-    알제: 'ALG',
-    제르바: 'DJE',
-    제슈프: 'RZE',
-  },
-];
+const MAPPING_OBJ = {
+  1: <Arrive title="출발지" name="departure" />,
+  2: <Arrive title="도착지" name="destination" />,
+  3: <Dep />,
+  4: <People />,
+};
+
+const CITYNAME_EN_DATA = {
+  서울: 'SEL',
+  제주: 'CJU',
+  김포: 'GMP',
+  부산: 'PUS',
+  청주: 'CJJ',
+  광주: 'KWJ',
+  대구: 'TAE',
+  여수: 'RSU',
+  울산: 'USN',
+  양양: 'YNY',
+  이제프스크: 'LJK',
+  보이제: 'BOI',
+  제네바: 'GVA',
+  콘제도: 'RNI',
+  제네럴산토스: 'GES',
+  제양: 'SWA',
+  알제: 'ALG',
+  제르바: 'DJE',
+  제슈프: 'RZE',
+};
 
 const InnerBar = styled.div`
   display: flex;

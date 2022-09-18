@@ -19,10 +19,8 @@ const AirCart = () => {
   const [passengerData, setPassengerData] = useState([]);
 
   const navigate = useNavigate();
-  // const navigateState = useNavigate().state;
-  // console.log('navigateState:', navigateState);
   const { state } = useLocation();
-  console.log('navigateState:', state.result);
+  // console.log('navigateState:', state.result);
 
   useEffect(() => {
     // fetch('/data/aircartdata/airCartData.json')

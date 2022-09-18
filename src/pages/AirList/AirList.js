@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-// import { API } from '../../config';
 import ModalFilterBar from '../../components/ModalFilterBar';
-// import LogoImg from './images/AirList/jin.png';
 const AirList = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,8 +42,11 @@ const AirList = () => {
           : setTicketData(data.one_way_result);
       });
   }, [location.search, modalData]);
-  // [...data.one_way_result.concat(data.round_trip_result)]
+
   if (Object.keys(ticketData).length === 0) return <>Loading...</>;
+
+  const ticketDataArr = Object.values(ticketData);
+
   const goToTrue = () => {
     const checkedSolt =
       selectedSort === 1
@@ -69,8 +70,6 @@ const AirList = () => {
         : '&airlines=깨깨오항공';
     });
     const checkedAirline2 = checkedAirline.join('');
-    // console.log('정렬 필터 :', checkedSolt);
-    // console.log('항공사 필터', checkedAirline2);
     const query = `&sort=${checkedSolt}${checkedAirline2}`;
     const oneWayQueryString = `?departure_location=${modalData.departure_location}&arrival_location=${modalData.arrival_location}&departure_date=${modalData.departure_date}&adult=${modalData.adult}&infant=${modalData.infant}&child=${modalData.child}&remaining_seat=${modalData.seat_class}`;
     const roundTripQueryString = `?ticket_type=round_trip&departure_location=${modalData.departure_location}&arrival_location=${modalData.arrival_location}&departure_date=${modalData.departure_date[0]}&departure_date=${modalData.departure_date[1]}&adult=${modalData.adult}&infant=${modalData.infant}&child=${modalData.child}&remaining_seat=${modalData.seat_class}`;
@@ -78,7 +77,6 @@ const AirList = () => {
       modalData.departure_date?.length === 2
         ? roundTripQueryString
         : oneWayQueryString;
-
     navigate(`/airlist${finalQueryString}${query}`);
     fetch(
       `http://43.200.163.205:8000/flights/schedules${finalQueryString}${query}`
@@ -101,9 +99,11 @@ const AirList = () => {
       setToggledList(toggledList.concat(id));
     }
   };
+
   const handleSort = id => {
     setSelectedSort(id === selectedSort ? '' : id);
   };
+
   const handleAirline = id => {
     if (selectedAirlines.includes(id)) {
       setSelectedAirlines(selectedAirlines.filter(airline => airline !== id));
@@ -112,11 +112,6 @@ const AirList = () => {
     }
   };
 
-  // const handleNow = e => {
-
-  // };
-  const ticketDataArr = Object.values(ticketData);
-  console.log(ticketDataArr);
   return (
     <Wrapper>
       <ModalFilterBar modalData={modalData} />
@@ -128,7 +123,6 @@ const AirList = () => {
               )
             : null}
         </DepartScheduleContainer>
-
         <FilterTop>
           <Strong>빠른 정렬</Strong>
           <div>

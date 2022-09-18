@@ -1,12 +1,15 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  plusPassenger,
+  minusPassenger,
+  setRating,
+} from '../../../store/passenger';
 import styled, { css } from 'styled-components';
 
-const People = ({
-  changeRating,
-  plusPassengerNumber,
-  minusPassengerNumber,
-  passengerInfo,
-}) => {
+const People = () => {
+  const dispatch = useDispatch();
+  const passengerInfo = useSelector(state => state.passengerInfo);
   const { adult, child, baby, rating } = passengerInfo;
 
   const condition = {
@@ -33,7 +36,10 @@ const People = ({
               <Setting>
                 <ButtonMinus
                   name={name}
-                  onClick={minusPassengerNumber}
+                  onClick={e => {
+                    const { name } = e.target;
+                    dispatch(minusPassenger(name));
+                  }}
                   disabled={condition[name]}
                 >
                   &#10134;
@@ -41,7 +47,10 @@ const People = ({
                 <Num>{passengerInfo[name]}</Num>
                 <ButtonPlus
                   name={name}
-                  onClick={plusPassengerNumber}
+                  onClick={e => {
+                    const { name } = e.target;
+                    dispatch(plusPassenger(name));
+                  }}
                   disabled={name === 'baby' && adult <= baby}
                 >
                   &#10133;
@@ -58,7 +67,7 @@ const People = ({
             <Rating
               key={id}
               primary={rating === seat_rating}
-              onClick={e => changeRating(e.target.innerText)}
+              onClick={e => dispatch(setRating(e.target.innerText))}
             >
               {seat_rating}
             </Rating>
